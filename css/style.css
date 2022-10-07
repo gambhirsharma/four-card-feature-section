@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/* variables */
+/* default */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* mixins */
+body {
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+  color: #a3a5ae;
+  min-width: 240px;
+}
+
+main {
+  margin: 4rem 1.4rem 3.5rem;
+}
+main header h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-align: center;
+}
+main .section__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4c4e61;
+  font-weight: 600;
+}
+main .section__intro {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 27rem;
+  margin: 0 auto 3.75rem auto;
+}
+main .section__detail {
+  font-weight: 400;
+}
+main .flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+main .flex .supervisor {
+  background: white url("../images/icon-supervisor.svg") no-repeat 90% 80%;
+}
+main .flex .supervisor::after {
+  background-color: #45d3d3;
+}
+main .flex .team-builder {
+  background: white url("../images/icon-team-builder.svg") no-repeat 90% 80%;
+}
+main .flex .team-builder::after {
+  background-color: #ea5353;
+}
+main .flex .karma {
+  background: white url("../images/icon-karma.svg") no-repeat 90% 80%;
+}
+main .flex .karma::after {
+  background-color: #fcaf4a;
+}
+main .flex .calculator {
+  background: white url("../images/icon-calculator.svg") no-repeat 90% 80%;
+}
+main .flex .calculator::after {
+  background-color: #549ef2;
+}
+main .article {
+  width: 100%;
+  min-height: 220px;
+  min-width: 160px;
+  max-width: 363px;
+  padding: 1.6rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 10px 29px -5px #a3a5ae;
+  position: relative;
+}
+main .article::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+main .article__title {
+  color: #4c4e61;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+main .article__detail {
+  font-size: 0.8rem;
+}
+
+/* footer */
+.attribution {
+  font-size: 0.75rem;
+  line-height: 20px;
+  text-align: center;
+  color: #666666;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+.attribution a {
+  text-decoration: none;
+  color: #666666;
+  font-weight: 600;
+}
+.attribution a:hover {
+  color: #454545;
+}
+
+/* media queries */
+@media screen and (min-width: 1170px) {
+  body {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main {
+    margin: 3rem 0.5rem 0.5rem 0.5rem;
+  }
+  main header h1 {
+    font-size: 2.5rem;
+    color: #4c4e61;
+  }
+  main .section__title {
+    font-size: 2.5rem;
+  }
+  main .section__intro {
+    font-size: 1rem;
+    margin: 0 auto 4rem auto;
+    max-width: 35rem;
+  }
+  main .section__detail {
+    display: flex;
+    justify-content: space-around;
+    min-width: 882px;
+  }
+  main .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+    align-content: center;
+  }
+  main .flex .team-builder {
+    margin-bottom: 2rem;
+  }
+  main .flex-full {
+    align-self: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main .flex-full .article {
+    margin: 0;
+  }
+  main .flex-full .supervisor {
+    margin-right: 2rem;
+  }
+  main .flex-full .calculator {
+    margin-left: 2rem;
+  }
+  main .article {
+    max-width: 350px;
+    min-height: 250px;
+    padding: 2rem;
+  }
+  main .article__title {
+    font-size: 1.25rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

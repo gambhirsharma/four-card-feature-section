@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+/* variables */
+
+$prim-red: hsl(0, 78%, 62%);
+$prim-cyan: hsl(180, 62%, 55%);
+$prim-orange: hsl(34, 97%, 64%);
+$prim-blue: hsl(212, 86%, 64%);
+
+$neu-dark-blue: hsl(234, 12%, 34%);
+$neu-gray-blue: hsl(229, 6%, 66%);
+$neu-light-gray: hsl(0, 0%, 98%);
+
+$dark-gray: hsl(0, 0%, 27%);
+$gray: hsl(0, 0%, 40%);
+$white: hsl(0, 0%, 100%);
+
+$font-size: 15px;
+$font-size-large: 20px;
+$font-family: "Poppins", sans-serif;
+$font-light: 200;
+$font-medium: 400;
+$font-bold: 600;
+
+$supervisor-icon: "../images/icon-supervisor.svg";
+$team-builder-icon: "../images/icon-team-builder.svg";
+$karma-icon: "../images/icon-karma.svg";
+$calculator-icon: "../images/icon-calculator.svg";
+
+$breakpoint: 1170px;
+// $breakpoint: 835px;
+// $breakpoint: 968px;
+
+/* default */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* mixins */
+
+@mixin article-extra($url, $background-color) {
+  background: $white url($url) no-repeat 90% 80%;
+  &::after {
+    background-color: $background-color;
+  }
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-family;
+  background-color: $neu-light-gray;
+  color: $neu-gray-blue;
+  min-width: 240px;
+}
+
+main {
+  margin: 4rem 1.4rem 3.5rem;
+  header {
+    h1 {
+      font-size: 1.5rem;
+      font-weight: $font-light;
+      text-align: center;
+    }
+  }
+  .section {
+    &__title {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: $neu-dark-blue;
+      font-weight: $font-bold;
+    }
+    &__intro {
+      font-size: 1rem;
+      text-align: center;
+      max-width: 27rem;
+      margin: 0 auto 3.75rem auto;
+    }
+    &__detail {
+      font-weight: $font-medium;
+    }
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    .supervisor {
+      @include article-extra($supervisor-icon, $prim-cyan);
+    }
+    .team-builder {
+      @include article-extra($team-builder-icon, $prim-red);
+    }
+    .karma {
+      @include article-extra($karma-icon, $prim-orange);
+    }
+    .calculator {
+      @include article-extra($calculator-icon, $prim-blue);
+    }
+  }
+  .article {
+    width: 100%;
+    min-height: 220px;
+    min-width: 160px;
+    max-width: 363px;
+    padding: 1.6rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 10px 29px -5px $neu-gray-blue;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      top: 0;
+      left: 0;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    &__title {
+      color: $neu-dark-blue;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: $font-bold;
+    }
+    &__detail {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* footer */
+.attribution {
+  font-size: 0.75rem;
+  line-height: 20px;
+  text-align: center;
+  color: $gray;
+  margin-top: 1rem;
+  font-weight: $font-medium;
+  a {
+    text-decoration: none;
+    color: $gray;
+    font-weight: $font-bold;
+    &:hover {
+      color: $dark-gray;
+    }
+  }
+}
+
+/* media queries */
+
+@media screen and (min-width: $breakpoint) {
+  body {
+    font-size: $font-size-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main {
+    margin: 3rem 0.5rem 0.5rem 0.5rem;
+    header {
+      h1 {
+        font-size: 2.5rem;
+        color: $neu-dark-blue;
+      }
+    }
+    .section {
+      &__title {
+        font-size: 2.5rem;
+      }
+      &__intro {
+        font-size: 1rem;
+        margin: 0 auto 4rem auto;
+        max-width: 35rem;
+      }
+      &__detail {
+        display: flex;
+        justify-content: space-around;
+        min-width: 882px;
+      }
+    }
+    .flex {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      flex: 1;
+      align-content: center;
+      .team-builder {
+        margin-bottom: 2rem;
+      }
+    }
+    .flex-full {
+      align-self: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      .article {
+        margin: 0;
+      }
+      .supervisor {
+        margin-right: 2rem;
+      }
+
+      .calculator {
+        margin-left: 2rem;
+      }
+    }
+    .article {
+      max-width: 350px;
+      min-height: 250px;
+      padding: 2rem;
+      &__title {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
